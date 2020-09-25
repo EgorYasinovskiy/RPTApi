@@ -18,14 +18,17 @@ ___
 ___
 ####  Authorization
 ___
-	RuPostApi api = new RuPostApi("your login","your password");
+``` C#
+RuPostApi api = new RuPostApi("your login","your password");
 	
-	/*
-	*	You can also go this way.
-	*/
+/*
+*	You can also go this way.
+*/
 	
-	RuPostApi api = new RuPostApi();
-	api.Authorize("your login", "your password")
+RuPostApi api = new RuPostApi();
+api.Authorize("your login", "your password")
+```
+
 ___
 You can get a login and password to access the API [here](https://tracking.pochta.ru/main).
 ___
@@ -34,58 +37,64 @@ ___
 Method GetOperationHistory is used to receive information on specific shipment. 
 Method returns detailed information about all the operations during the delivery of the shipment.
 ___
-	var barcode = "RA644000001RU" 	// Track number.
-	var barcode1 = "14102192069353" // Also track number.
-	// Getting the history of operations.
-	var response = api.GetOperationHistory(barcode);
+``` C#
+var barcode = "RA644000001RU" 	// Track number.
+var barcode1 = "14102192069353" // Also track number.
+// Getting the history of operations.
+var response = api.GetOperationHistory(barcode);
 	
-	/*
-	*	You can add the message type(shipment or registered notification) 
-	*	and preferred language(Russian or English).
-	*	
-	*	Default values is MessageType.Shipment, Language.Russian
-	*/
+/*
+*	You can add the message type(shipment or registered notification) 
+*	and preferred language(Russian or English).
+*	
+*	Default values is MessageType.Shipment, Language.Russian
+*/
 	
-	response = api.GetOperationsHistory(barcode, MessageType.Shipment, Language.Russian)
+response = api.GetOperationsHistory(barcode, MessageType.Shipment, Language.Russian)
+```
 ___
 #### PostalOrderEventsForMail\
 ___
 Method PostalOrderEventsForMail  is used to receive information of operations on COD payments.
 Returns the history of operations on COD payments.
 ___
-	var barcode = "141021920693530";
-	var response = api.PostalOrderEventsForMail(barcode);
-	/*
-	* You can add preffered language to request(Russian or English).
-	*  
-	* Default language is Russian.
-	*/
-	response = api.PostalOrderEventsForMail(barcode,Language.English);
+``` C#
+var barcode = "141021920693530";
+var response = api.PostalOrderEventsForMail(barcode);
+/*
+* You can add preffered language to request(Russian or English).
+*  
+* Default language is Russian.
+*/
+response = api.PostalOrderEventsForMail(barcode,Language.English);
+```
 ___
 #### GetTicket
 ___
 Method GetTicket is used to receive the ticket to the information according to the list of tracking numbers. 
 The request contains the list of tracking numbers. Upon successful completion, the method returns ticket identifier.
 ___
-
-	var codes = new List<string> codes();
-	codes = FillCodesFunc(); // Fill our codes to track (max count is 3000).
-	var ticket = api.GetTicket(codes);
+```C#
+var codes = new List<string> codes();
+codes = FillCodesFunc(); // Fill our codes to track (max count is 3000).
+var ticket = api.GetTicket(codes);
+```
 
 ___
 #### GetResponseByTicket
 ___
 This method is used to get information about the shipments according to the ticket, which was issued earlier.
 ___
-
-	// Using ticket from the previous example.
-	var response = api.GetResponseByTicket(ticket)
-	/*
-	*	However you can add preffered language to this request.
-	*	 
-	*	Default language is Russian.
-	*/
-	response = api.GetResponseByTicket(ticket,Language.English);
+``` C#
+// Using ticket from the previous example.
+var response = api.GetResponseByTicket(ticket)
+/*
+*	However you can add preffered language to this request.
+*	 
+*	Default language is Russian.
+*/
+response = api.GetResponseByTicket(ticket,Language.English);
+```
 ___
 #### Full info about api and methods
 You can find more info on the official site of [Russian post](https://tracking.pochta.ru/specification).
