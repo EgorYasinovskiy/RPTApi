@@ -6,11 +6,15 @@ ___
 
 ### Public methods
 ___
-[Authorize](# authorization)
-[GetOperationsHistory](# getoperationshistory)
-[PostalOrderEventsForMail](# postalordereventsformail)
-[ GetTicket](#  getticket)
-[GetResponseByTicket](# getresponsebyticket)
+[Authorize](#authorization)
+
+[GetOperationsHistory](#getoperationshistory)
+
+[PostalOrderEventsForMail](#postalordereventsformail)
+
+[GetTicket](#getticket)
+
+[GetResponseByTicket](#getresponsebyticket)
 ___
 ####  Authorization
 ___
