@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>RPTApi</RootNamespace>
-    <PackageId>Russian Post Api</PackageId>
+    <PackageId>RussianPostApi</PackageId>
     <Version>1.0.0</Version>
     <Authors>Egor Yasinovskiy</Authors>
     <Company>Egor Yasinovskiy</Company>
