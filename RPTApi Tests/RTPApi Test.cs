@@ -1,12 +1,8 @@
 using NUnit.Framework;
-using NUnit.Compatibility;
-using NUnit;
 using RPTApi.Exceptions;
 using BatchWSDL;
 using NUnit.Framework.Internal;
 using System.Threading.Tasks;
-using System.ServiceModel;
-using System.ServiceModel.Channels;
 using RuPostWSDL;
 
 namespace RPTApi.Tests
