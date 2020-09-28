@@ -13,7 +13,7 @@ namespace BatchWSDL
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://fclient.russianpost.org", ConfigurationName="BatchWSDL.FederalClient")]
-    public interface FederalClient
+    public interface IFederalClient
     {
         
         // CODEGEN: Создается контракт сообщения, так как операция имеет много возвращаемых значений.
@@ -448,13 +448,13 @@ namespace BatchWSDL
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
-    public interface FederalClientChannel : BatchWSDL.FederalClient, System.ServiceModel.IClientChannel
+    public interface FederalClientChannel : BatchWSDL.IFederalClient, System.ServiceModel.IClientChannel
     {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.2")]
-    public partial class FederalClientClient : System.ServiceModel.ClientBase<BatchWSDL.FederalClient>, BatchWSDL.FederalClient
+    public partial class FederalClient : System.ServiceModel.ClientBase<BatchWSDL.IFederalClient>, BatchWSDL.IFederalClient
     {
         
         /// <summary>
@@ -464,35 +464,35 @@ namespace BatchWSDL
         /// <param name="clientCredentials">Учетные данные клиента.</param>
         static partial void ConfigureEndpoint(System.ServiceModel.Description.ServiceEndpoint serviceEndpoint, System.ServiceModel.Description.ClientCredentials clientCredentials);
         
-        public FederalClientClient() : 
-                base(FederalClientClient.GetDefaultBinding(), FederalClientClient.GetDefaultEndpointAddress())
+        public FederalClient() : 
+                base(FederalClient.GetDefaultBinding(), FederalClient.GetDefaultEndpointAddress())
         {
             this.Endpoint.Name = EndpointConfiguration.ItemDataServicePort.ToString();
             ConfigureEndpoint(this.Endpoint, this.ClientCredentials);
         }
         
-        public FederalClientClient(EndpointConfiguration endpointConfiguration) : 
-                base(FederalClientClient.GetBindingForEndpoint(endpointConfiguration), FederalClientClient.GetEndpointAddress(endpointConfiguration))
+        public FederalClient(EndpointConfiguration endpointConfiguration) : 
+                base(FederalClient.GetBindingForEndpoint(endpointConfiguration), FederalClient.GetEndpointAddress(endpointConfiguration))
         {
             this.Endpoint.Name = endpointConfiguration.ToString();
             ConfigureEndpoint(this.Endpoint, this.ClientCredentials);
         }
         
-        public FederalClientClient(EndpointConfiguration endpointConfiguration, string remoteAddress) : 
-                base(FederalClientClient.GetBindingForEndpoint(endpointConfiguration), new System.ServiceModel.EndpointAddress(remoteAddress))
+        public FederalClient(EndpointConfiguration endpointConfiguration, string remoteAddress) : 
+                base(FederalClient.GetBindingForEndpoint(endpointConfiguration), new System.ServiceModel.EndpointAddress(remoteAddress))
         {
             this.Endpoint.Name = endpointConfiguration.ToString();
             ConfigureEndpoint(this.Endpoint, this.ClientCredentials);
         }
         
-        public FederalClientClient(EndpointConfiguration endpointConfiguration, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(FederalClientClient.GetBindingForEndpoint(endpointConfiguration), remoteAddress)
+        public FederalClient(EndpointConfiguration endpointConfiguration, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(FederalClient.GetBindingForEndpoint(endpointConfiguration), remoteAddress)
         {
             this.Endpoint.Name = endpointConfiguration.ToString();
             ConfigureEndpoint(this.Endpoint, this.ClientCredentials);
         }
         
-        public FederalClientClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public FederalClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress)
         {
         }
@@ -543,12 +543,12 @@ namespace BatchWSDL
         
         private static System.ServiceModel.Channels.Binding GetDefaultBinding()
         {
-            return FederalClientClient.GetBindingForEndpoint(EndpointConfiguration.ItemDataServicePort);
+            return FederalClient.GetBindingForEndpoint(EndpointConfiguration.ItemDataServicePort);
         }
         
         private static System.ServiceModel.EndpointAddress GetDefaultEndpointAddress()
         {
-            return FederalClientClient.GetEndpointAddress(EndpointConfiguration.ItemDataServicePort);
+            return FederalClient.GetEndpointAddress(EndpointConfiguration.ItemDataServicePort);
         }
         
         public enum EndpointConfiguration
