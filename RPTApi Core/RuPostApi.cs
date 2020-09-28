@@ -11,7 +11,12 @@ namespace RPTApi
 {
     public class RuPostApi
     {
-        private bool _isAuthorized;
+        public bool IsAuthorized 
+        { 
+            get=>_isAuthorized;
+            private set=>_isAuthorized=value; 
+        }
+        private bool _isAuthorized = false;
         private AuthorizationHeader authorizationHeader;
         /// <summary>
         /// Auth method. Makes the test request to check if login and password is valid.
@@ -22,7 +27,7 @@ namespace RPTApi
         public async Task AuthorizeAsync(string login, string password)
         {
             AuthorizationHeader header = new AuthorizationHeader() { login = login, password = password };
-            OperationHistoryRequest request = new OperationHistoryRequest() { Barcode = "", Language = "RUS", MessageType = 0 };
+            OperationHistoryRequest request = new OperationHistoryRequest() { Barcode = "RA644000001RU", Language = "RUS", MessageType = 0 };
             OperationHistoryClient client = new OperationHistoryClient();
             try
             {
@@ -93,7 +98,7 @@ namespace RPTApi
         /// <param name="barcodes"> Collection of barcodes. </param>
         /// <param name="language"> Prefferd language in response. </param>
         /// <returns> Upon successful completion, the method returns ticket identifier. </returns>
-        public async Task<TicketResponse> GetTicket(IEnumerable<string> barcodes, Language language = Language.Russian)
+        public async Task<TicketResponse> GetTicketAsync(IEnumerable<string> barcodes, Language language = Language.Russian)
         {
             if (_isAuthorized)
             {
