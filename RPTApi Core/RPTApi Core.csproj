@@ -8,6 +8,11 @@
     <Authors>Egor Yasinovskiy</Authors>
     <Company>Egor Yasinovskiy</Company>
     <RepositoryUrl>https://github.com/EgorYasinovskiy/RPTApi</RepositoryUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Description>(Russian Post Tracking Api) is a .NET Core library that implements the API methods of the Russian post in a convenient, object-oriented format.</Description>
+    <Copyright>Egor Yasinovskiy</Copyright>
+    <PackageIcon>RPTApi icon.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -34,4 +39,10 @@
     <WCFMetadata Include="Connected Services" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="RPTApi icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 </Project>

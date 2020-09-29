@@ -1,5 +1,10 @@
 # RPTApi Core
 RTPApi Core - (Russian Post Tracking Api) is a .NET Core library that implements the API methods of the Russian post in a convenient, object-oriented format.
+To install it u can type 
+```
+Install-Package RussianPostApi -Version 1.0.0
+```
+in a nuget console
 
 ___
 ## Example of use
